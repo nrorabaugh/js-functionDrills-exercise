@@ -17,10 +17,17 @@
 //   Expect sumOfNums([-1,0,1])) to equal 0
 //   Expect sumOfNums([])) to equal 0
 
-const sumOfNums = function (numsArray) {
 
-  // Your Code Here
+const sumOfNums = function (numsArray) {
+  let result = 0
+  if(numsArray.length > 0){ 
+  for(let i=0; i<numsArray.length; i++) {
+      result = result + numsArray[i]
+    }
+  }
+    return result
 }
+
 
 
 
@@ -32,8 +39,15 @@ const sumOfNums = function (numsArray) {
 //   Expect numsGreaterThanTen([-1, 0, 1, 9, 9.5, 9.99, 10, 11, 20, 100]) to equal [11, 20, 100]
 
 const numsGreaterThanTen = function (numsArray) {
-
-  // Your Code Here
+  let result2 = []
+    for(let i=0; i < numsArray.length; i++) {
+      if(numsArray[i] > 10){
+        result2.push(numsArray[i])
+      }
+    }
+      if(result2.length > 0) {
+        return result2
+        }
 }
 
 // #3
@@ -49,9 +63,11 @@ const numsGreaterThanTen = function (numsArray) {
 //   Expect allGreaterThanTen([])).to.equal(true);
 
 const allGreaterThanTen = function (numsArray) {
-
-  // Your Code Here
-}
+    const check = function(val){
+    return val > 10;
+    }
+    return (numsArray.every(check))
+  }
 
 // #4
 // Input: an array of words
@@ -61,8 +77,13 @@ const allGreaterThanTen = function (numsArray) {
 //    to equal ['alphabet', 'banana', 'carrot']
 
 const wordsWithAtLeastFiveLetters = function (words) {
-
-  // Your Code Here
+  let result = []
+  for(let i = 0; i < words.length; i++){
+    if(words[i].length >= 5){
+      result.push(words[i])
+    }
+  }
+  return result
 }
 
 // #5
@@ -76,8 +97,11 @@ const wordsWithAtLeastFiveLetters = function (words) {
 //  Expect allStartingWithA([]) to equal true
 
 const allStartingWithA = function (words) {
-
-  // Your Code Here
+  const check = function(str){
+    let a = str.toLocaleLowerCase();
+    return a.startsWith("a");
+  }
+  return (words.every(check))
 }
 
 // #6
