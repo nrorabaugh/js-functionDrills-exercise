@@ -112,9 +112,11 @@ const allStartingWithA = function (words) {
 //   Expect anyStartingWithB(['Amy', 'Bob']) to equal true
 //   Expect anyStartingWithB(['apple', 'alligator', 'Arkansas'])) to equal false
 const anyStartingWithB = function (words) {
-
-  // Your Code Here
-}
+    let string = words.join(" ");
+    let low = string.toLowerCase();
+    let truth = low.includes(" b");
+    return truth
+  }
 
 // This last set of functions are all related to one another! Use functions 7 to solve function 8,
 // use function 8 to solve 9, 10, and 11.
@@ -131,8 +133,17 @@ const anyStartingWithB = function (words) {
 //  Expect hasAtLeastNVowels('dangerous', 5) to equal false
 //  Expect hasAtLeastNVowels('banana', -1) to equal null
 const hasAtLeastNVowels = function (word, n) {
-
-  // Your Code Here
+  if(n = 0){
+    return "null"
+  }
+  let arr = Array.from(word)
+  let vowels = []
+  for(let i = 0; i < arr.length, i++) {
+    if(arr[i] === "a" || arr[i] === "o" arr[i] === "e" ||  arr[i] === "i" || arr[i] === "u" || ) {
+      vowels.push(arr[i])
+    }
+  }
+  return (vowels.length >= n)
 }
 
 // #8
